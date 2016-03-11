@@ -1,0 +1,7 @@
+#!/bin/sh
+mkdir /tmp/dictionaries
+sudo find . -name "*.zip" -print0 | xargs -0 -n1 unzip -n -d /tmp/dictionaries/
+
+sudo mv /tmp/dictionaries/*.dic /Library/Spelling/
+sudo mv /tmp/dictionaries/*.aff /Library/Spelling/
+rm -rf /tmp/dictionaries
